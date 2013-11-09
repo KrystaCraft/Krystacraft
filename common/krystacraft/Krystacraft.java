@@ -9,6 +9,7 @@ import krystacraft.lib.ConfigHandler;
 import krystacraft.lib.KrystacraftTab;
 import krystacraft.lib.Recipes;
 import krystacraft.lib.References;
+import krystacraft.network.PacketHandler;
 import krystacraft.worldgen.WorldGen;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -21,13 +22,15 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
  
 @Mod(
-		modid=References.MOD_ID, 
-		name=References.MOD_NAME, 
-		version=References.VERSION_NUMBER)
+		modid = References.MOD_ID, 
+		name = References.MOD_NAME, 
+		version = References.VERSION_NUMBER,
+		dependencies = References.DEPENDENCIES)
 @NetworkMod(
 		channels = {References.CHANNEL},
-		clientSideRequired=true, 
-		serverSideRequired=true)
+		clientSideRequired = true, 
+		serverSideRequired = true,
+		packetHandler = PacketHandler.class)
 
 public class Krystacraft {
 	

@@ -1,6 +1,6 @@
 [
 {
-  "modid": "mod_KrystaCraft",
+  "modid": "KrystaCraft",
   "name": "KrystaCraft",
   "version": "0.0.1",
   "mcversion": "@MC_VERSION@",
@@ -13,7 +13,8 @@
   "parent":"",
   "screenshots": [],
   "dependencies": [
-     "mod_MinecraftForge"
+     "mod_MinecraftForge",
+     "mod_BuildCraft|Core"
   ]
 }
 ]
