@@ -1,0 +1,19 @@
+[
+{
+  "modid": "mod_KrystaCraft",
+  "name": "KrystaCraft",
+  "version": "0.0.1",
+  "mcversion": "@MC_VERSION@",
+  "description": "Fun with crystals",
+  "credits": "Created by Poidy & Shadow2004",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": [ "Poidy", "Shadow2004" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
