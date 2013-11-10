@@ -4,9 +4,9 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import krystacraft.Krystacraft;
+import krystacraft.KrystaCraft;
 import krystacraft.items.Items;
-import krystacraft.lib.Names;
+import krystacraft.lib.Strings;
 import krystacraft.lib.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -18,8 +18,8 @@ public class BlockSodaliteOre extends Block {
 	public BlockSodaliteOre(int id) {
 		super(id, Material.rock);
 		
-		this.setUnlocalizedName(Names.BlockSodaliteOre_unlocalizedName);
-		this.setCreativeTab(Krystacraft.krystacraftTab);
+		this.setUnlocalizedName(Strings.BlockSodaliteOre_unlocalizedName);
+		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(4.0f);
 		this.setResistance(15F);
 		this.setStepSound(Block.soundStoneFootstep);
@@ -28,7 +28,7 @@ public class BlockSodaliteOre extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		blockIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":block" + Names.BlockSodaliteOre_unlocalizedName);
+		blockIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":block" + Strings.BlockSodaliteOre_unlocalizedName);
 	}
 	
 	public int idDropped(int metadata, Random random, int fortune){

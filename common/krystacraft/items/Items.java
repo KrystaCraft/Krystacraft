@@ -1,8 +1,8 @@
 package krystacraft.items;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import krystacraft.lib.Ids;
-import krystacraft.lib.Names;
+import krystacraft.lib.ItemIds;
+import krystacraft.lib.Strings;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
@@ -18,21 +18,21 @@ public class Items {
 	public static Item soldalitePickaxe;
 	
 	public static void init() {
-		krystaDust 			= new ItemKrystaDust(Ids.KrystaDust_Default);
-		largeCrystal 		= new ItemLargeCrystal(Ids.LargeCrystal_Default);
-		smallCrystal 		= new ItemSmallCrystal(Ids.SmallCrystal_Default);
-		sodaliteCrystal 	= new ItemSodaliteCrystal(Ids.SodaliteCrystal_Default);
+		krystaDust 			= new ItemKrystaDust(ItemIds.KrystaDust_Default);
+		largeCrystal 		= new ItemLargeCrystal(ItemIds.LargeCrystal_Default);
+		smallCrystal 		= new ItemSmallCrystal(ItemIds.SmallCrystal_Default);
+		sodaliteCrystal 	= new ItemSodaliteCrystal(ItemIds.SodaliteCrystal_Default);
 		
 		sodalite = EnumHelper.addToolMaterial("SodalitePickaxe", 2, 1200, 10.0F, 6.0F, 18);
-		soldalitePickaxe 	= new ItemSodalitePickaxe(Ids.SodalitePickaxe_Default, sodalite);
+		soldalitePickaxe 	= new ItemSodalitePickaxe(ItemIds.SodalitePickaxe_Default, sodalite);
 	}
 	
 	public static void addNames() {
-		LanguageRegistry.addName(krystaDust, Names.ItemKrystaDust_name);
-		LanguageRegistry.addName(largeCrystal, Names.ItemLargeCrystal_name);
-		LanguageRegistry.addName(smallCrystal, Names.ItemSmallCrystal_name);
-		LanguageRegistry.addName(sodaliteCrystal, Names.ItemSodaliteCrystal_name);
-		LanguageRegistry.addName(soldalitePickaxe, Names.ItemSodalitePickaxe_name);
+		LanguageRegistry.addName(krystaDust, Strings.ItemKrystaDust_name);
+		LanguageRegistry.addName(largeCrystal, Strings.ItemLargeCrystal_name);
+		LanguageRegistry.addName(smallCrystal, Strings.ItemSmallCrystal_name);
+		LanguageRegistry.addName(sodaliteCrystal, Strings.ItemSodaliteCrystal_name);
+		LanguageRegistry.addName(soldalitePickaxe, Strings.ItemSodalitePickaxe_name);
 	}
 	
 }
