@@ -61,8 +61,8 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generatePlains(World world, Random random, int x, int z){
-		oreGen.generateOre(Blocks.krystaOre, Block.stone, world , random, x, z, 160, 4, 30);
-    	oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world, random, x, z, 160, 4, 50);
+		oreGen.generateOre(Blocks.krystaOre, Block.stone, world , random, x, z, 160, 6, 30);
+    	oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world, random, x, z, 160, 6, 50);
 	}
 	
 	private void generateDesert(World world, Random random, int x, int z){
