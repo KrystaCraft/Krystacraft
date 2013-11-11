@@ -57,61 +57,86 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateOcean(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.tanzaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.chalcedonyOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generatePlains(World world, Random random, int x, int z){
-		oreGen.generateOre(Blocks.krystaOre, Block.stone, world , random, x, z, 160, 6, 30);
-    	oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world, random, x, z, 160, 6, 50);
-    	oreGen.generateOre(Blocks.onyxOre, Block.stone, world, random, x, z, 160, 6, 50);
+		oreGen.generateOre(Blocks.malachiteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.roseQuartzOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.berylOre, Block.stone, world , random, x, z, 160, 6, 30);
+    	oreGen.generateOre(Blocks.krystaOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateDesert(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.fireOpalOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.rhodoliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateExtremeHills(World world, Random random, int x, int z){
+		oreGen.generateOre(Blocks.onyxOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.hackmaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
 		
 	}
 	
 	private void generateForest(World world, Random random, int x, int z){
+		oreGen.generateOre(Blocks.jadeOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.tourmalineOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sugiliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 		
 	}
 	
 	private void generateTaiga(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.hackmaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.onyxOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateSwampland(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.hackmaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.onyxOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateRiver(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.fireOpalOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.rhodoliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateHell(World world, Random random, int x, int z){
-		oreGen.generateOre(Blocks.krystaOre, Block.netherrack, world , random, x, z, 160, 4, 30);
+		oreGen.generateOre(Blocks.netherGarnetOre, Block.netherrack, world , random, x, z, 160, 4, 30);
 	}
 	
 	private void generateSky(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.endTopazOre, Block.whiteStone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateFrozenOcean(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.roseQuartzOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.malachiteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.berylOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateFrozenRiver(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.tourmalineOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.jadeOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sugiliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateIcePlains(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.chalcedonyOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.tanzaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateIceMountains(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.sugiliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.jadeOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.tourmalineOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateMushroomIsland(World world, Random random, int x, int z){
@@ -119,35 +144,52 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateMushroomIslandShore(World world, Random random, int x, int z){
-		
+	
 	}
 	
 	private void generateBeach(World world, Random random, int x, int z){
+		oreGen.generateOre(Blocks.berylOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.malachiteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.roseQuartzOre, Block.stone, world , random, x, z, 160, 6, 30);
 		
 	}
 	
 	private void generateDesertHills(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.fireOpalOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.rhodoliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateForestHills(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.jadeOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.tourmalineOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sugiliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateTaigaHills(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.hackmaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.onyxOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateExtremeHillsEdge(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.onyxOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.hackmaniteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.aquamarineOre, Block.stone, world , random, x, z, 160, 6, 30);
 	}
 	
 	private void generateJungle(World world, Random random, int x, int z){
+		oreGen.generateOre(Blocks.rhodoliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.fireOpalOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world , random, x, z, 160, 6, 30);
 		
 	}
 	
 	private void generateJungleHills(World world, Random random, int x, int z){
-		
+		oreGen.generateOre(Blocks.rhodoliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.fireOpalOre, Block.stone, world , random, x, z, 160, 6, 30);
+		oreGen.generateOre(Blocks.sodaliteOre, Block.stone, world , random, x, z, 160, 6, 30);
+
 	}
 
 	private void generateSurface(World world, Random random, int x, int z) {
