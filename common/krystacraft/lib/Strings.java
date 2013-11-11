@@ -29,7 +29,7 @@ public class Strings {
 	public static final String BlockEndTopazOre_unlocalizedName = "EndTopazOre";
 	public static final String BlockEndTopazOre_name = "End Topaz Ore";
 	
-	public static final String BlockFireOpalOre_unlocalizedName = "FireOpal";
+	public static final String BlockFireOpalOre_unlocalizedName = "FireOpalOre";
 	public static final String BlockFireOpalOre_name = "Fire Opal Ore";
 	
 	public static final String BlockHackmaniteOre_unlocalizedName = "HackmaniteOre";
