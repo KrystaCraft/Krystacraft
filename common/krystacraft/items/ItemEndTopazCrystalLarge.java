@@ -21,7 +21,7 @@ public class ItemEndTopazCrystalLarge extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		itemIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":item" + Strings.ItemHackmaniteCrystalLarge_unlocalizedName);
+		itemIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":item" + Strings.ItemEndTopazCrystalLarge_unlocalizedName);
 	}
 
 }
