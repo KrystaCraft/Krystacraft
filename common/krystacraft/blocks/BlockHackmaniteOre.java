@@ -78,11 +78,11 @@ public class BlockHackmaniteOre extends Block {
 
 			// Choose what will be on the list
 			if (luckDraw <= 0.25) {
-				idDropped = Items.largeCrystal.itemID;
+				idDropped = Items.hackmaniteCrystalLarge.itemID;
 				metaDropped = 1;
 			}
 			else if (luckDraw <= 1.00) {
-				idDropped = Items.smallCrystal.itemID;
+				idDropped = Items.hackmaniteCrystal.itemID;
 				metaDropped = 3;
 			}
 			

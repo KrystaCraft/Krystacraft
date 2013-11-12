@@ -15,7 +15,7 @@ public class CreativeTabKrystaCraft extends CreativeTabs {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
-		return Items.largeCrystal.itemID;
+		return Items.hackmaniteCrystalLarge.itemID;
 	}
 
 }
