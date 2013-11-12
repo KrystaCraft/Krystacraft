@@ -26,28 +26,51 @@ public class WorldGenManager implements IWorldGenerator {
         
         switch(b.biomeName){
         case "Ocean": generateOcean(world, random, chunkX, chunkZ);
+        	break;
         case "Plains": generatePlains(world, random, chunkX, chunkZ);
+        	break;
         case "Desert": generateDesert(world, random, chunkX, chunkZ);
+        	break;
         case "Extreme Hills": generateExtremeHills(world, random, chunkX, chunkZ);
+        	break;
         case "Forest": generateForest(world, random, chunkX, chunkZ);
+        	break;
         case "Taiga": generateTaiga(world, random, chunkX, chunkZ);
+        	break;
         case "Swampland": generateSwampland(world, random, chunkX, chunkZ);
+        	break;
         case "River": generateRiver(world, random, chunkX, chunkZ);
+        	break;
         case "Hell": generateHell(world, random, chunkX, chunkZ);
+        	break;
         case "Sky": generateSky(world, random, chunkX, chunkZ);
+        	break;
         case "FrozenOcean": generateFrozenOcean(world, random, chunkX, chunkZ);
+        	break;
         case "FrozenRiver": generateFrozenRiver(world, random, chunkX, chunkZ);
+        	break;
         case "Ice Plains": generateIcePlains(world, random, chunkX, chunkZ);
+        	break;
         case "Ice Mountains": generateIceMountains(world, random, chunkX, chunkZ);
+        	break;
         case "MushroomIsland": generateMushroomIsland(world, random, chunkX, chunkZ);
+        	break;
         case "MushroomIslandShore": generateMushroomIslandShore(world, random, chunkX, chunkZ);
+        	break;
         case "Beach": generateBeach(world, random, chunkX, chunkZ);
+        	break;
         case "DesertHills": generateDesertHills(world, random, chunkX, chunkZ);
+        	break;
         case "ForestHills": generateForestHills(world, random, chunkX, chunkZ);
+        	break;
         case "TaigaHills": generateTaigaHills(world, random, chunkX, chunkZ);
+        	break;
         case "Extreme Hills Edge": generateExtremeHillsEdge(world, random, chunkX, chunkZ);
+        	break;
         case "Jungle": generateJungle(world, random, chunkX, chunkZ);
+        	break;
         case "JungleHills": generateJungleHills(world, random, chunkX, chunkZ);
+        	break;
         }
         
         //Generate OverWorld items
