@@ -6,8 +6,6 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import krystacraft.KrystaCraft;
-import krystacraft.lib.Strings;
-import krystacraft.lib.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
@@ -22,20 +20,23 @@ public class BlockNewLeaf extends BlockLeavesBase implements IShearable {
 	
 	private static final int METADATA_BITMASK       = 0x3;
 	
+	private String iconPath;
+	
 	private static int unmarkedMetadata(int metadata) {
         return metadata & METADATA_BITMASK;
     }
 
-	public BlockNewLeaf(int id, Material material, boolean useFastGraphics) {
+	public BlockNewLeaf(int id, Material material, boolean useFastGraphics, String unlocalizedName, String iconPath) {
 		super(id, material, useFastGraphics);
 		
-		this.setUnlocalizedName(Strings.BlockNewLeaf_unlocalizedName);
+		this.setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(0.5f);
 		this.setResistance(0.5F);
 		this.setStepSound(Block.soundGrassFootstep);
 		this.setLightValue(1.0F);
 		this.setLightOpacity(1);
+		this.setIconPath(iconPath);
 	}
 	
 	@Override
@@ -45,7 +46,7 @@ public class BlockNewLeaf extends BlockLeavesBase implements IShearable {
 	
     @Override
     public int idDropped(int metadata, Random rand, int par3) {
-        return Blocks.newLeaf.blockID;
+        return this.blockID;
     }
     
     @Override
@@ -78,7 +79,7 @@ public class BlockNewLeaf extends BlockLeavesBase implements IShearable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		blockIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":block" + Strings.BlockNewLeaf_unlocalizedName);
+		blockIcon = icon.registerIcon(iconPath);
 	}
 
 	@Override
@@ -87,4 +88,12 @@ public class BlockNewLeaf extends BlockLeavesBase implements IShearable {
         ret.add(new ItemStack(this, 1, unmarkedMetadata(world.getBlockMetadata(x, y, z))));
         return ret;
     }
+
+	public String getIconPath() {
+		return iconPath;
+	}
+
+	public void setIconPath(String iconPath) {
+		this.iconPath = iconPath;
+	}
 }

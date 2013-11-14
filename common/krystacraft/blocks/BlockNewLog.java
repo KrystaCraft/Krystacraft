@@ -3,8 +3,6 @@ package krystacraft.blocks;
 import java.util.Random;
 
 import krystacraft.KrystaCraft;
-import krystacraft.lib.Strings;
-import krystacraft.lib.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -14,19 +12,22 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockNewLog extends BlockLog {
-
-	public BlockNewLog(int id) {
+	
+	private String[] iconPaths;
+	
+	public BlockNewLog(int id, String unlocalizedName, String[] iconPaths) {
 		super(id);
 		
-		this.setUnlocalizedName(Strings.BlockNewLog_unlocalizedName);
+		this.setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(2f);
 		this.setResistance(2F);
 		this.setStepSound(Block.soundWoodFootstep);
+		this.setIconPaths(iconPaths);
 	}
 	
 	public int idDropped(int i, Random rand, int j){
-		return Blocks.newLog.blockID;
+		return this.blockID;
 	}
 	
 	@Override
@@ -45,9 +46,9 @@ public class BlockNewLog extends BlockLog {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister Icon){
-		topIcon = Icon.registerIcon(References.MOD_ID.toLowerCase() + ":blockLogNewTreeTop");
-		bottomIcon = Icon.registerIcon(References.MOD_ID.toLowerCase() + ":blockLogNewTreeTop");
-		sideIcon = Icon.registerIcon(References.MOD_ID.toLowerCase() + ":blockLogNew");
+		topIcon = Icon.registerIcon(this.iconPaths[0]);
+		bottomIcon = Icon.registerIcon(this.iconPaths[1]);
+		sideIcon = Icon.registerIcon(this.iconPaths[2]);
 	}
 	
 	@Override
@@ -60,6 +61,14 @@ public class BlockNewLog extends BlockLog {
 		} else {
 			return sideIcon;
 		}
+	}
+
+	public String[] getIconPaths() {
+		return iconPaths;
+	}
+
+	public void setIconPaths(String[] iconPaths) {
+		this.iconPaths = iconPaths;
 	}
 
 }

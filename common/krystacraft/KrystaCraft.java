@@ -2,15 +2,15 @@ package krystacraft;
 
 
 import net.minecraft.creativetab.CreativeTabs;
-import krystacraft.blocks.Blocks;
-import krystacraft.configuration.ConfigurationHandler;
-import krystacraft.core.proxy.CommonProxy;
-import krystacraft.creativetab.CreativeTabKrystaCraft;
-import krystacraft.items.Items;
+import krystacraft.handlers.BlockHandler;
+import krystacraft.handlers.ConfigurationHandler;
+import krystacraft.handlers.ItemHandler;
+import krystacraft.helpers.LogHelper;
 import krystacraft.lib.References;
 import krystacraft.network.PacketHandler;
+import krystacraft.proxy.CommonProxy;
 import krystacraft.recipes.Recipes;
-import krystacraft.wep.worldgen.WorldGen;
+import krystacraft.utility.CreativeTabKrystaCraft;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -45,28 +45,27 @@ public class KrystaCraft {
 	public static CreativeTabs krystacraftTab = new CreativeTabKrystaCraft(CreativeTabs.getNextID(), References.MOD_NAME);
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+	public void preInit(FMLPreInitializationEvent event) throws Exception {
+		LogHelper.info("Initializing.");
 		
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-		Items.init();
-		Blocks.init();
-		WorldGen.init();
+		ItemHandler.init();
+		BlockHandler.createBlocks();
+		proxy.registerWorldGen();
 		Recipes.init();
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		Items.addNames();
-		Blocks.addNames();
-		WorldGen.registerWorldGenerators();
+	public void init(FMLInitializationEvent event) throws Exception {
+		ItemHandler.addNames();
 		
 		LanguageRegistry.instance().addStringLocalization("itemGroup." + References.MOD_NAME, "en_US", References.MOD_NAME);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		// Stub Method
+		LogHelper.info("Successfully Loaded.");
 	}
        
 }

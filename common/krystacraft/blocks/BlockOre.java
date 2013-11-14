@@ -3,57 +3,69 @@ package krystacraft.blocks;
 import java.util.ArrayList;
 import java.util.Random;
 
-import krystacraft.KrystaCraft;
-import krystacraft.items.Items;
-import krystacraft.lib.References;
-import krystacraft.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import krystacraft.KrystaCraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockEndTopazOre extends Block {
+public class BlockOre extends Block {
 
-	public BlockEndTopazOre(int id) {
-		super(id, Material.rock);
+	private String iconPath;
+	private int xpDropLow;
+	private int xpDropHigh;
+	private int firstItemDrop;
+	private int secondItemDrop;
+	
+	public BlockOre(int par1, String unlocalizedName, String iconPath, int xpLow, int xpHigh,
+			int firstItemDrop, int secondItemDrop) {
+		super(par1, Material.rock);
 		
-		this.setUnlocalizedName(Strings.BlockEndTopazOre_unlocalizedName);
+		this.setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(4.0f);
 		this.setResistance(15F);
 		this.setStepSound(Block.soundStoneFootstep);
 		this.setLightValue(0.5F);
+		this.setIconPath(iconPath);
+		this.setXpDropLow(xpLow);
+		this.setXpDropHigh(xpHigh);
+		this.setFirstItemDrop(firstItemDrop);
+		this.setSecondItemDrop(secondItemDrop);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		blockIcon = icon.registerIcon(References.MOD_ID.toLowerCase() + ":block" + Strings.BlockEndTopazOre_unlocalizedName);
+		blockIcon = icon.registerIcon(this.iconPath);
 	}
-	
+
+	@Override
 	public int idDropped(int metadata, Random random, int fortune){
-		return Items.krystaDust.itemID;
+		return 0;
 	}
 	
-	public int quantityDropped(Random par1Random)
-    {
+	@Override
+	public int quantityDropped(Random par1Random){
         return 2 + par1Random.nextInt(2);
     }
 	
+	@Override
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
 
         if (this.idDropped(par5, par1World.rand, par7) != this.blockID)
         {
-            int j1 = 1 + par1World.rand.nextInt(5);
+            int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, this.xpDropLow, this.xpDropHigh);
             this.dropXpOnBlockBreak(par1World, par2, par3, par4, j1);
         }
     }
-
+	
 	public ArrayList<ItemStack> getBlockDropped(World world, int x, int y,
 			int z, int metadata, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
@@ -75,11 +87,11 @@ public class BlockEndTopazOre extends Block {
 
 			// Choose what will be on the list
 			if (luckDraw <= 0.25) {
-				idDropped = Items.endTopazCrystalLarge.itemID;
+				idDropped = this.secondItemDrop;
 				metaDropped = 1;
 			}
 			else if (luckDraw <= 1.00) {
-				idDropped = Items.endTopazCrystal.itemID;
+				idDropped = this.firstItemDrop;
 				metaDropped = 3;
 			}
 			
@@ -88,11 +100,47 @@ public class BlockEndTopazOre extends Block {
 			if (idDropped > 0) {
 				ret.add(new ItemStack(idDropped, 1, metaDropped));
 			}
-
-			//return ret;
 		}
 		return ret;
-
+	}
+	
+	public String getIconPath() {
+		return iconPath;
 	}
 
+	public void setIconPath(String iconPath) {
+		this.iconPath = iconPath;
+	}
+
+	public int getXpDropLow() {
+		return xpDropLow;
+	}
+
+	public void setXpDropLow(int xpDropLow) {
+		this.xpDropLow = xpDropLow;
+	}
+
+	public int getXpDropHigh() {
+		return xpDropHigh;
+	}
+
+	public void setXpDropHigh(int xpDropHigh) {
+		this.xpDropHigh = xpDropHigh;
+	}
+
+	public int getFirstItemDrop() {
+		return firstItemDrop;
+	}
+
+	public void setFirstItemDrop(int firstItemDrop) {
+		this.firstItemDrop = firstItemDrop;
+	}
+
+	public int getSecondItemDrop() {
+		return secondItemDrop;
+	}
+
+	public void setSecondItemDrop(int secondItemDrop) {
+		this.secondItemDrop = secondItemDrop;
+	}
 }

@@ -1,8 +1,8 @@
-package krystacraft.creativetab;
+package krystacraft.utility;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import krystacraft.items.Items;
+import krystacraft.handlers.ItemHandler;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class CreativeTabKrystaCraft extends CreativeTabs {
@@ -15,7 +15,7 @@ public class CreativeTabKrystaCraft extends CreativeTabs {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
-		return Items.hackmaniteCrystalLarge.itemID;
+		return ItemHandler.hackmaniteCrystalLarge.itemID;
 	}
 
 }

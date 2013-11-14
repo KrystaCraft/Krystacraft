@@ -13,18 +13,22 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import krystacraft.blocks.Blocks;
 import krystacraft.wep.TreeSoilRegistry;
 
 public class WorldGenKrystalTree extends WorldGenerator{
 
-	private static final int	trunkBlock					= Blocks.newLog.blockID;
-	private static final int	leafBlock					= Blocks.newLeaf.blockID;
+	private final int trunkBlock;
+	private final int leafBlock;
 	
 	private static final int	BASE_HEIGHT					= 4;
 	private static final int	CANOPY_HEIGHT				= 3;
 	private static final int	CANOPY_RADIUS_EXTRA_RADIUS	= 0;
 	private static final int	MAX_VARIANCE_HEIGHT			= 2;
+	
+	public WorldGenKrystalTree(int trunkBlock, int leafBlock) {
+		this.trunkBlock = trunkBlock;
+		this.leafBlock = leafBlock;
+	}
 	
 	private static boolean isBlockSuitableForGrowing(final World world, final int x, final int y, final int z) {
 		final int id = world.getBlockId(x, y, z);
