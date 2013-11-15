@@ -8,24 +8,24 @@ import krystacraft.handlers.ItemHandler;
 public class BlockSettings {
 	public enum Ores {
 							/*Unlocalised Name, Name, ID, Lowest XP Dropped, Highest XP Dropped, 
-							 *Small Crystal Dropped, Large Crystal Dropped, Max Y, Max Vein Size, Chance to spawn*/
-		krystaOre			("krystaOre","Krysta Ore", 500, 0, 2, "KrystaCrystal", "KrystaCrystalLarge", 160, 6, 30),			
-		sodaliteOre			("SodaliteOre","Sodalite Ore", 503, 0, 2, "SodaliteCrystal", "SodaliteCrystalLarge", 160, 6, 30),
-		onyxOre				("OnyxOre","Onyx Ore", 504, 0, 2, "OnyxCrystal", "OnyxCrystalLarge", 160, 6, 30),
-		aquamarineOre		("AquamarineOre","Aquamarine Ore", 505, 0, 2, "AquamarineCrystal", "AquamarineCrystalLarge", 160, 6, 30),
-		berylOre			("BerylOre","Beryl Ore", 506, 0, 2, "BerylCrystal", "BerylCrystalLarge", 160, 6, 30),
-		chalcedonyOre		("ChalcedonyOre","Chalcedony Ore", 507, 0, 2, "ChalcedonyCrystal", "ChalcedonyCrystalLarge", 160, 6, 30),
-		endTopazOre			("EndTopazOre","End Topaz Ore", 508, 0, 2, "EndTopazCrystal", "EndTopazCrystalLarge", 160, 6, 30),
-		fireOpalOre			("FireOpalOre","Fire Opal Ore", 509, 0, 2, "FireOpalCrystal", "FireOpalCrystalLarge", 160, 6, 30),
-		hackmaniteOre		("HackmaniteOre","Hackmanite Ore", 510, 0, 2, "HackmaniteCrystal", "HackmaniteCrystalLarge", 160, 6, 30),
-		jadeOre				("JadeOre","Jade Ore", 511, 0, 2, "JadeCrystal", "JadeCrystalLarge", 160, 6, 30),
-		malachiteOre		("MalachiteOre","Malachite Ore", 512, 0, 2, "MalachiteCrystal", "MalachiteCrystalLarge", 160, 6, 30),
-		netherGarnetOre		("NetherGarnetOre","Nether Garnet Ore", 513, 0, 2, "NetherGarnetCrystal", "NetherGarnetCrystalLarge", 160, 6, 30),
-		rhodoliteOre		("RhodoliteOre","Rhodolite Ore", 514, 0, 2, "RhodoliteCrystal", "RhodoliteCrystalLarge", 160, 6, 30),
-		roseQuartzOre		("RoseQuartzOre","Rose Quartz Ore", 515, 0, 2, "RoseQuartzCrystal", "RoseQuartzCrystalLarge", 160, 6, 30),
-		sugiliteOre			("SugiliteOre","Sugilite Ore", 516, 0, 2, "SugiliteCrystal", "SugiliteCrystalLarge", 160, 6, 30),
-		tanzaniteOre		("TanzaniteOre","Tanzanite Ore", 517, 0, 2, "TanzaniteCrystal", "TanzaniteCrystalLarge", 160, 6, 30),
-		tourmalineOre		("TourmalineOre","Tourmaline Ore", 518, 0, 2, "TourmalineCrystal", "TourmalineCrystalLarge", 160, 6, 30);
+							 *Small Crystal Dropped, Large Crystal Dropped, Max Y, Max Vein Size, Chance to spawn, Harvest Level*/
+		krystaOre			("krystaOre","Krysta Ore", 500, 0, 2, "KrystaCrystal", "KrystaCrystalLarge", 160, 6, 30, 3),			
+		sodaliteOre			("SodaliteOre","Sodalite Ore", 503, 0, 2, "SodaliteCrystal", "SodaliteCrystalLarge", 160, 6, 30, 3),
+		onyxOre				("OnyxOre","Onyx Ore", 504, 0, 2, "OnyxCrystal", "OnyxCrystalLarge", 160, 6, 30, 3),
+		aquamarineOre		("AquamarineOre","Aquamarine Ore", 505, 0, 2, "AquamarineCrystal", "AquamarineCrystalLarge", 160, 6, 30, 3),
+		berylOre			("BerylOre","Beryl Ore", 506, 0, 2, "BerylCrystal", "BerylCrystalLarge", 160, 6, 30, 3),
+		chalcedonyOre		("ChalcedonyOre","Chalcedony Ore", 507, 0, 2, "ChalcedonyCrystal", "ChalcedonyCrystalLarge", 160, 6, 30, 3),
+		endTopazOre			("EndTopazOre","End Topaz Ore", 508, 0, 2, "EndTopazCrystal", "EndTopazCrystalLarge", 160, 6, 30, 3),
+		fireOpalOre			("FireOpalOre","Fire Opal Ore", 509, 0, 2, "FireOpalCrystal", "FireOpalCrystalLarge", 160, 6, 30, 3),
+		hackmaniteOre		("HackmaniteOre","Hackmanite Ore", 510, 0, 2, "HackmaniteCrystal", "HackmaniteCrystalLarge", 160, 6, 30, 3),
+		jadeOre				("JadeOre","Jade Ore", 511, 0, 2, "JadeCrystal", "JadeCrystalLarge", 160, 6, 30, 3),
+		malachiteOre		("MalachiteOre","Malachite Ore", 512, 0, 2, "MalachiteCrystal", "MalachiteCrystalLarge", 160, 6, 30, 3),
+		netherGarnetOre		("NetherGarnetOre","Nether Garnet Ore", 513, 0, 2, "NetherGarnetCrystal", "NetherGarnetCrystalLarge", 160, 6, 30, 3),
+		rhodoliteOre		("RhodoliteOre","Rhodolite Ore", 514, 0, 2, "RhodoliteCrystal", "RhodoliteCrystalLarge", 160, 6, 30, 3),
+		roseQuartzOre		("RoseQuartzOre","Rose Quartz Ore", 515, 0, 2, "RoseQuartzCrystal", "RoseQuartzCrystalLarge", 160, 6, 30, 3),
+		sugiliteOre			("SugiliteOre","Sugilite Ore", 516, 0, 2, "SugiliteCrystal", "SugiliteCrystalLarge", 160, 6, 30, 3),
+		tanzaniteOre		("TanzaniteOre","Tanzanite Ore", 517, 0, 2, "TanzaniteCrystal", "TanzaniteCrystalLarge", 160, 6, 30, 3),
+		tourmalineOre		("TourmalineOre","Tourmaline Ore", 518, 0, 2, "TourmalineCrystal", "TourmalineCrystalLarge", 160, 6, 30, 3);
 		
 		private String unLocName;
 		private String name;
@@ -40,9 +40,10 @@ public class BlockSettings {
 		private int maxVeinSize;
 		private int chanceToSpawn;
 		private boolean willSpawn = true;
+		private int harvestLevel;
 		
 		private Ores (String unLocName, String name, int id, int xpLow, int xpHigh, String firstItemDrop, String secondItemDrop,
-				int maxY, int maxVeinSize, int chanceToSpawn){
+				int maxY, int maxVeinSize, int chanceToSpawn, int harvestLevel){
 			this.unLocName = unLocName;
 			this.name = name;
 			this.idDefault = id;
@@ -54,6 +55,7 @@ public class BlockSettings {
 			this.maxY = maxY;
 			this.maxVeinSize = maxVeinSize;
 			this.chanceToSpawn = chanceToSpawn;
+			this.harvestLevel = harvestLevel;
 		}
 
 		public String getUnLocName() {
@@ -108,6 +110,10 @@ public class BlockSettings {
 			return willSpawn;
 		}
 		
+		public int getHarvestLevel() {
+			return harvestLevel;
+		}
+		
 		public void load(Configuration config) {
 			//Property property;
 			
@@ -142,20 +148,21 @@ public class BlockSettings {
 	}
 	
 	public enum Logs {
-		newLog				("NewLog","New Log", 502);
+		newLog				("NewLog","New Log", 502, 1);
 		
 		private String unLocName;
 		private String name;
 		private int idDefault;
 		private int idActual; 
 		private String [] iconPaths;
+		private int harvestLevel;
 		
-		private Logs(String unLocName, String name, int id) {
+		private Logs(String unLocName, String name, int id, int harvestLevel) {
 			this.unLocName = unLocName;
 			this.name = name;
 			this.idDefault = id;
-			this.idActual = id;
 			this.iconPaths = this.setIconPaths();
+			this.harvestLevel = harvestLevel;
 		}
 
 		public String getUnLocName() {
@@ -184,6 +191,16 @@ public class BlockSettings {
 			String iconPaths[] = {topBottomTexture,topBottomTexture,sideTexture};
 			
 			return iconPaths;
+		}
+		
+		public int getHarvestLevel() {
+			return harvestLevel;
+		}
+		
+		public void load(Configuration config) {
+			//Property property;
+			
+			this.idActual = config.get(Configuration.CATEGORY_BLOCK, this.name, this.idDefault).getInt();
 		}
 	}
 	
@@ -222,6 +239,12 @@ public class BlockSettings {
 
 		public String getIconPath() {
 			return iconPath;
+		}
+		
+		public void load(Configuration config) {
+			//Property property;
+			
+			this.idActual = config.get(Configuration.CATEGORY_BLOCK, this.name, this.idDefault).getInt();
 		}
 	}
 }

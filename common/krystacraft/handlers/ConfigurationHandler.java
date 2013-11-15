@@ -5,6 +5,8 @@ import java.util.logging.Level;
 
 import krystacraft.helpers.LogHelper;
 import krystacraft.lib.BlockSettings;
+import krystacraft.lib.BlockSettings.Leafs;
+import krystacraft.lib.BlockSettings.Logs;
 import krystacraft.lib.References;
 import krystacraft.lib.BlockSettings.Ores;
 import net.minecraftforge.common.Configuration;
@@ -14,6 +16,12 @@ public class ConfigurationHandler {
 		final Configuration config = new Configuration(configFile);
 		try {
 			for (final BlockSettings.Ores setting : Ores.values()) {
+				setting.load(config);
+			}
+			for (final BlockSettings.Logs setting : Logs.values()) {
+				setting.load(config);
+			}
+			for (final BlockSettings.Leafs setting : Leafs.values()) {
 				setting.load(config);
 			}
 		} catch (final Exception e) {

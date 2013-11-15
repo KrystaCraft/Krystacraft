@@ -1,10 +1,30 @@
 package krystacraft.proxy;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import krystacraft.handlers.WorldGenHandler;
+import net.minecraft.block.Block;
 import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
+	
+	public void addName(Block block, String name) {
+		LanguageRegistry.addName(block, name);
+	}
+	
+	public void registerBlock(Block block, String name) {
+		GameRegistry.registerBlock(block, name);
+	}
+	
+	public void setBlockHarvestLevel(Block block, String toolType, int harvestLevel) {
+		MinecraftForge.setBlockHarvestLevel(block, toolType, harvestLevel);
+	}
+	
+	public void registerOre(String unLocalizedName, Block block) {
+		OreDictionary.registerOre(unLocalizedName, block);
+	}
 	
 	public void registerWorldGen() {		
 		GameRegistry.registerWorldGenerator(new WorldGenHandler());
