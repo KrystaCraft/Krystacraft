@@ -6,11 +6,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
-public class ItemCrystal extends Item {
+public class ItemDust extends Item {
 	
 	private String iconPath;
 	
-	public ItemCrystal(int id, String unlocalizedName, int stackSize, String iconPath) {
+	public ItemDust(int id, String unlocalizedName, int stackSize, String iconPath) {
 		super(id);
 		
 		this.setCreativeTab(KrystaCraft.krystacraftTab);

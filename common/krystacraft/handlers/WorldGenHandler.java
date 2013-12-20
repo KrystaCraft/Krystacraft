@@ -3,10 +3,8 @@ package krystacraft.handlers;
 import java.util.Random;
 
 import krystacraft.blocks.BlockOre;
-import krystacraft.lib.BlockSettings;
 import krystacraft.lib.BlockSettings.Leafs;
 import krystacraft.lib.BlockSettings.Logs;
-import krystacraft.lib.BlockSettings.Ores;
 import krystacraft.wep.worldgen.WorldGenKrystalTree;
 import krystacraft.wep.worldgen.WorldGenOre;
 import net.minecraft.block.Block;
@@ -19,8 +17,6 @@ public class WorldGenHandler implements IWorldGenerator {
 	
 
 	private WorldGenOre oreGen = new WorldGenOre();
-	private WorldGenKrystalTree worldGenKrystalTree;
-	private BlockSettings blockSettings = new BlockSettings();
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
@@ -89,20 +85,16 @@ public class WorldGenHandler implements IWorldGenerator {
 	private void generateOre(String[] ores, World world, Random random, int x, int z, Block blockToReplace) {
 		
 		for (int i = 0; i < ores.length - 1; i++){
-			Ores oreSetting = blockSettings.getOreSettings(ores[i]);
-			if (oreSetting.getWillSpawn() == true){
-				Block oreBlock = new BlockOre(oreSetting.getIdActual(), oreSetting.getUnLocName(), oreSetting.getIconPath(),
-						oreSetting.getXpLow(), oreSetting.getXpHigh(), 
-						ItemHandler.aquamarineCrystal.itemID, ItemHandler.aquamarineCrystalLarge.itemID);
-				
-				oreGen.generateOre(oreBlock, blockToReplace, world , random, x, z, oreSetting.getMaxY(), 
-						oreSetting.getMaxVeinSize(), oreSetting.getChanceToSpawn());
+			BlockOre oreBlock = BlockHandler.oreMap.get(ores[i]);
+			if (oreBlock.getWillSpawn() == true){
+				oreGen.generateOre(oreBlock, blockToReplace, world , random, x, z, oreBlock.getMaxY(), 
+						oreBlock.getMaxVeinSize(), oreBlock.getChanceToSpawn());
 			}
 		}
 	}
 	
 	private void generateKrystalTree(World world, Random random, int x, int z) {
-		worldGenKrystalTree = new WorldGenKrystalTree(Logs.newLog.getIdActual(), Leafs.newLeaf.getIdActual());
+		WorldGenKrystalTree worldGenKrystalTree = new WorldGenKrystalTree(Logs.newLog.getIdActual(), Leafs.newLeaf.getIdActual());
 		
 		//Generate Trees
 		int Xcoord1 = x + random.nextInt(16); //where in chuck it generates

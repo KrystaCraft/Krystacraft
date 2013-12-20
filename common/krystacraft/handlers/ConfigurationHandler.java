@@ -7,6 +7,10 @@ import krystacraft.helpers.LogHelper;
 import krystacraft.lib.BlockSettings;
 import krystacraft.lib.BlockSettings.Leafs;
 import krystacraft.lib.BlockSettings.Logs;
+import krystacraft.lib.ItemSettings;
+import krystacraft.lib.ItemSettings.BasicTools;
+import krystacraft.lib.ItemSettings.Crystals;
+import krystacraft.lib.ItemSettings.Dusts;
 import krystacraft.lib.References;
 import krystacraft.lib.BlockSettings.Ores;
 import net.minecraftforge.common.Configuration;
@@ -22,6 +26,15 @@ public class ConfigurationHandler {
 				setting.load(config);
 			}
 			for (final BlockSettings.Leafs setting : Leafs.values()) {
+				setting.load(config);
+			}
+			for (final ItemSettings.Crystals setting : Crystals.values()) {
+				setting.load(config);
+			}
+			for (final ItemSettings.BasicTools setting : BasicTools.values()) {
+				setting.load(config);
+			}
+			for (final ItemSettings.Dusts setting : Dusts.values()) {
 				setting.load(config);
 			}
 		} catch (final Exception e) {

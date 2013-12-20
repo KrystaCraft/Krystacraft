@@ -1,9 +1,6 @@
 package krystacraft.lib;
 
-import net.minecraft.block.Block;
 import net.minecraftforge.common.Configuration;
-import krystacraft.blocks.BlockOre;
-import krystacraft.handlers.ItemHandler;
 
 public class BlockSettings {
 	public enum Ores {
@@ -120,31 +117,6 @@ public class BlockSettings {
 			this.idActual = config.get(Configuration.CATEGORY_BLOCK, this.name, this.idDefault).getInt();
 			this.willSpawn = config.get("World Gen", this.name, this.willSpawn).getBoolean(willSpawn);
 		}
-	}
-	
-	public Block getOreBlock (String name){
-		BlockOre ore = null;
-		
-		for (Ores o : Ores.values()){
-			if (o.getUnLocName().equals(name)) {
-				ore = new BlockOre(o.getIdActual(), o.getUnLocName(), o.getIconPath(), o.getXpLow(), o.getXpHigh(), 
-						ItemHandler.aquamarineCrystal.itemID, ItemHandler.aquamarineCrystalLarge.itemID);
-			}	
-		}
-		
-		return ore;
-	}
-	
-	public Ores getOreSettings (String name){
-		Ores ore = null;
-		
-		for (Ores o : Ores.values()){
-			if (o.getUnLocName().equals(name)) {
-				ore = o;
-			}	
-		}
-		
-		return ore;
 	}
 	
 	public enum Logs {

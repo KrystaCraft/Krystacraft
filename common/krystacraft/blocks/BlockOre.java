@@ -20,9 +20,13 @@ public class BlockOre extends Block {
 	private int xpDropHigh;
 	private int firstItemDrop;
 	private int secondItemDrop;
+	private int maxY;
+	private int maxVeinSize;
+	private int chanceToSpawn;
+	private boolean willSpawn;
 	
 	public BlockOre(int par1, String unlocalizedName, String iconPath, int xpLow, int xpHigh,
-			int firstItemDrop, int secondItemDrop) {
+			int firstItemDrop, int secondItemDrop, int maxY, int maxVeinSize, int chanceToSpawn, boolean willSpawn) {
 		super(par1, Material.rock);
 		
 		this.setUnlocalizedName(unlocalizedName);
@@ -36,6 +40,10 @@ public class BlockOre extends Block {
 		this.setXpDropHigh(xpHigh);
 		this.setFirstItemDrop(firstItemDrop);
 		this.setSecondItemDrop(secondItemDrop);
+		this.setMaxY(maxY);
+		this.setMaxVeinSize(maxVeinSize);
+		this.setChanceToSpawn(chanceToSpawn);
+		this.setWillSpawn(willSpawn);
 	}
 	
 	@Override
@@ -142,5 +150,37 @@ public class BlockOre extends Block {
 
 	public void setSecondItemDrop(int secondItemDrop) {
 		this.secondItemDrop = secondItemDrop;
+	}
+
+	public boolean getWillSpawn() {
+		return willSpawn;
+	}
+
+	public void setWillSpawn(boolean willSpawn) {
+		this.willSpawn = willSpawn;
+	}
+
+	public int getMaxY() {
+		return maxY;
+	}
+
+	public void setMaxY(int maxY) {
+		this.maxY = maxY;
+	}
+
+	public int getMaxVeinSize() {
+		return maxVeinSize;
+	}
+
+	public void setMaxVeinSize(int maxVeinSize) {
+		this.maxVeinSize = maxVeinSize;
+	}
+
+	public int getChanceToSpawn() {
+		return chanceToSpawn;
+	}
+
+	public void setChanceToSpawn(int chanceToSpawn) {
+		this.chanceToSpawn = chanceToSpawn;
 	}
 }

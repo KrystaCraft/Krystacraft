@@ -5,11 +5,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import krystacraft.handlers.BlockHandler;
 import krystacraft.handlers.ConfigurationHandler;
 import krystacraft.handlers.ItemHandler;
+import krystacraft.handlers.RecipesHandler;
 import krystacraft.helpers.LogHelper;
 import krystacraft.lib.References;
 import krystacraft.network.PacketHandler;
 import krystacraft.proxy.CommonProxy;
-import krystacraft.recipes.Recipes;
 import krystacraft.utility.CreativeTabKrystaCraft;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -50,16 +50,14 @@ public class KrystaCraft {
 		
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-		ItemHandler.init();
+		ItemHandler.createItems();
 		BlockHandler.createBlocks();
 		proxy.registerWorldGen();
-		Recipes.init();
+		RecipesHandler.init();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) throws Exception {
-		ItemHandler.addNames();
-		
 		LanguageRegistry.instance().addStringLocalization("itemGroup." + References.MOD_NAME, "en_US", References.MOD_NAME);
 	}
 
