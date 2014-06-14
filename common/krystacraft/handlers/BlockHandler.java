@@ -31,7 +31,7 @@ public class BlockHandler {
 			if (firstDrop != null || secondDrop != null) {
 				BlockOre ore = new BlockOre(o.getIdActual(), o.getUnLocName(),
 						o.getIconPath(), o.getXpLow(), o.getXpHigh(),
-						firstDrop.itemID,
+						firstDrop.get,
 						secondDrop.itemID,
 						o.getMaxY(), o.getMaxVeinSize(), o.getChanceToSpawn(), o.getWillSpawn());
 	

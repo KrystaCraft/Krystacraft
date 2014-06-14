@@ -8,7 +8,6 @@ import krystacraft.handlers.ItemHandler;
 import krystacraft.handlers.RecipesHandler;
 import krystacraft.helpers.LogHelper;
 import krystacraft.lib.References;
-import krystacraft.network.PacketHandler;
 import krystacraft.proxy.CommonProxy;
 import krystacraft.utility.CreativeTabKrystaCraft;
 import cpw.mods.fml.common.Mod;
@@ -18,19 +17,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+//import cpw.mods.fml.common.registry.LanguageRegistry;
  
 @Mod(
 		modid = References.MOD_ID, 
 		name = References.MOD_NAME, 
 		version = References.VERSION_NUMBER,
 		dependencies = References.DEPENDENCIES)
-@NetworkMod(
-		channels = {References.CHANNEL},
-		clientSideRequired = true, 
-		serverSideRequired = true,
-		packetHandler = PacketHandler.class)
 
 public class KrystaCraft {
 	
@@ -58,7 +51,7 @@ public class KrystaCraft {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) throws Exception {
-		LanguageRegistry.instance().addStringLocalization("itemGroup." + References.MOD_NAME, "en_US", References.MOD_NAME);
+		//LanguageRegistry.instance().addStringLocalization("itemGroup." + References.MOD_NAME, "en_US", References.MOD_NAME);
 	}
 
 	@EventHandler

@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import krystacraft.KrystaCraft;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
@@ -25,15 +26,15 @@ public class BlockOre extends Block {
 	private int chanceToSpawn;
 	private boolean willSpawn;
 	
-	public BlockOre(int par1, String unlocalizedName, String iconPath, int xpLow, int xpHigh,
+	public BlockOre(int id, String unlocalizedName, String iconPath, int xpLow, int xpHigh,
 			int firstItemDrop, int secondItemDrop, int maxY, int maxVeinSize, int chanceToSpawn, boolean willSpawn) {
-		super(par1, Material.rock);
+		super(Material.rock);
 		
 		this.setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(4.0f);
 		this.setResistance(15F);
-		this.setStepSound(Block.soundStoneFootstep);
+		this.setStepSound(Block.soundTypeStone);
 		this.setLightValue(0.5F);
 		this.setIconPath(iconPath);
 		this.setXpDropLow(xpLow);

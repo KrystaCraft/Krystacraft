@@ -8,6 +8,7 @@ import krystacraft.lib.BlockSettings.Logs;
 import krystacraft.wep.worldgen.WorldGenKrystalTree;
 import krystacraft.wep.worldgen.WorldGenOre;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -106,85 +107,85 @@ public class WorldGenHandler implements IWorldGenerator {
 	private void generateOcean(World world, Random random, int x, int z){
 		String[] ores = {"TanzaniteOre","ChalcedonyOre","AquamarineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generatePlains(World world, Random random, int x, int z){
 		String[] ores = {"MalachiteOre","RoseQuartzOre","BerylOre","KrystaOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateDesert(World world, Random random, int x, int z){
 		String[] ores = {"FireOpalOre","RhodoliteOre","SodaliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateExtremeHills(World world, Random random, int x, int z){
 		String[] ores = {"OnyxOre","HackmaniteOre","AquamarineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);	
+		generateOre(ores, world, random, x, z, Blocks.stone);	
 	}
 	
 	private void generateForest(World world, Random random, int x, int z){
 		String[] ores = {"JadeOre","TourmalineOre","SugiliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateTaiga(World world, Random random, int x, int z){
 		String[] ores = {"HackmaniteOre","AquamarineOre","OnyxOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateSwampland(World world, Random random, int x, int z){
 		String[] ores = {"AquamarineOre","HackmaniteOre","OnyxOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateRiver(World world, Random random, int x, int z){
 		String[] ores = {"SodaliteOre","FireOpalOre","RhodoliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateHell(World world, Random random, int x, int z){
 		String[] ores = {"NetherGarnetOre"};
 		
-		generateOre(ores, world, random, x, z, Block.netherrack);
+		generateOre(ores, world, random, x, z, Blocks.netherrack);
 	}
 	
 	private void generateSky(World world, Random random, int x, int z){
 		String[] ores = {"EndTopazOre"};
 		
-		generateOre(ores, world, random, x, z, Block.whiteStone);
+		generateOre(ores, world, random, x, z, Blocks.end_stone);
 	}
 	
 	private void generateFrozenOcean(World world, Random random, int x, int z){
 		String[] ores = {"RoseQuartzOre","MalachiteOre","BerylOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateFrozenRiver(World world, Random random, int x, int z){
 		String[] ores = {"TourmalineOre","JadeOre","SugiliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateIcePlains(World world, Random random, int x, int z){
 		String[] ores = {"ChalcedonyOre","TanzaniteOre","AquamarineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateIceMountains(World world, Random random, int x, int z){
 		String[] ores = {"SugiliteOre","JadeOre","TourmalineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateMushroomIsland(World world, Random random, int x, int z){}
@@ -194,45 +195,45 @@ public class WorldGenHandler implements IWorldGenerator {
 	private void generateBeach(World world, Random random, int x, int z){
 		String[] ores = {"BerylOre","MalachiteOre","RoseQuartzOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 		
 	}
 	
 	private void generateDesertHills(World world, Random random, int x, int z){
 		String[] ores = {"FireOpalOre","RhodoliteOre","SodaliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateForestHills(World world, Random random, int x, int z){
 		String[] ores = {"JadeOre","TourmalineOre","SugiliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateTaigaHills(World world, Random random, int x, int z){
 		String[] ores = {"HackmaniteOre","OnyxOre","AquamarineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateExtremeHillsEdge(World world, Random random, int x, int z){
 		String[] ores = {"OnyxOre","HackmaniteOre","AquamarineOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 	}
 	
 	private void generateJungle(World world, Random random, int x, int z){
 		String[] ores = {"RhodoliteOre","FireOpalOre","SodaliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 		
 	}
 	
 	private void generateJungleHills(World world, Random random, int x, int z){
 		String[] ores = {"RhodoliteOre","FireOpalOre","SodaliteOre"};
 		
-		generateOre(ores, world, random, x, z, Block.stone);
+		generateOre(ores, world, random, x, z, Blocks.stone);
 
 	}
 

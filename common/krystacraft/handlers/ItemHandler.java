@@ -10,8 +10,6 @@ import krystacraft.lib.ItemSettings.BasicTools;
 import krystacraft.lib.ItemSettings.Crystals;
 import krystacraft.lib.ItemSettings.Dusts;
 import krystacraft.proxy.CommonProxy;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraftforge.common.EnumHelper;
 
 public class ItemHandler {
 	
