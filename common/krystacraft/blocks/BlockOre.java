@@ -7,9 +7,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import krystacraft.KrystaCraft;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
+//import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+//import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -19,23 +21,22 @@ public class BlockOre extends Block {
 	private String iconPath;
 	private int xpDropLow;
 	private int xpDropHigh;
-	private int firstItemDrop;
-	private int secondItemDrop;
+	private Item firstItemDrop;
+	private Item secondItemDrop;
 	private int maxY;
 	private int maxVeinSize;
 	private int chanceToSpawn;
 	private boolean willSpawn;
 	
-	public BlockOre(int id, String unlocalizedName, String iconPath, int xpLow, int xpHigh,
-			int firstItemDrop, int secondItemDrop, int maxY, int maxVeinSize, int chanceToSpawn, boolean willSpawn) {
+	public BlockOre(String iconPath, int xpLow, int xpHigh,
+			Item firstItemDrop, Item secondItemDrop, int maxY, int maxVeinSize, int chanceToSpawn, boolean willSpawn) {
 		super(Material.rock);
-		
-		this.setUnlocalizedName(unlocalizedName);
+
 		this.setCreativeTab(KrystaCraft.krystacraftTab);
 		this.setHardness(4.0f);
 		this.setResistance(15F);
 		this.setStepSound(Block.soundTypeStone);
-		this.setLightValue(0.5F);
+		//this.setLightValue(0.5F);
 		this.setIconPath(iconPath);
 		this.setXpDropLow(xpLow);
 		this.setXpDropHigh(xpHigh);
@@ -47,16 +48,16 @@ public class BlockOre extends Block {
 		this.setWillSpawn(willSpawn);
 	}
 	
-	@Override
+	//@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister icon) {
-		blockIcon = icon.registerIcon(this.iconPath);
+	public void registerIcons(IIconRegister icon) {
+		this.blockIcon = icon.registerIcon(this.iconPath);
 	}
 
-	@Override
-	public int idDropped(int metadata, Random random, int fortune){
-		return 0;
-	}
+	//@Override
+//	public int idDropped(int metadata, Random random, int fortune){
+//		return 0;
+//	}
 	
 	@Override
 	public int quantityDropped(Random par1Random){
@@ -68,11 +69,8 @@ public class BlockOre extends Block {
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
 
-        if (this.idDropped(par5, par1World.rand, par7) != this.blockID)
-        {
-            int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, this.xpDropLow, this.xpDropHigh);
-            this.dropXpOnBlockBreak(par1World, par2, par3, par4, j1);
-        }
+        int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, this.xpDropLow, this.xpDropHigh);
+        this.dropXpOnBlockBreak(par1World, par2, par3, par4, j1);
     }
 	
 	public ArrayList<ItemStack> getBlockDropped(World world, int x, int y,
@@ -85,30 +83,27 @@ public class BlockOre extends Block {
 
 		// Here I make it drop random items
 		double luckDraw;
-		int idDropped = 0;
+		Item droppedItem = null;
 		int metaDropped = 0;
 
 		for (int i = 0; i < count; i++) {
 			// Gets a number between 0 and 4
 			luckDraw = Math.random();
-			idDropped = 0;
 			metaDropped = 0;
 
 			// Choose what will be on the list
 			if (luckDraw <= 0.25) {
-				idDropped = this.secondItemDrop;
+                droppedItem = this.secondItemDrop;
 				metaDropped = 1;
 			}
 			else if (luckDraw <= 1.00) {
-				idDropped = this.firstItemDrop;
+                droppedItem = this.firstItemDrop;
 				metaDropped = 3;
 			}
 			
 			
 			// Adds the block to the return list
-			if (idDropped > 0) {
-				ret.add(new ItemStack(idDropped, 1, metaDropped));
-			}
+			ret.add(new ItemStack(droppedItem, 1, metaDropped));
 		}
 		return ret;
 	}
@@ -137,19 +132,19 @@ public class BlockOre extends Block {
 		this.xpDropHigh = xpDropHigh;
 	}
 
-	public int getFirstItemDrop() {
+	public Item getFirstItemDrop() {
 		return firstItemDrop;
 	}
 
-	public void setFirstItemDrop(int firstItemDrop) {
+	public void setFirstItemDrop(Item firstItemDrop) {
 		this.firstItemDrop = firstItemDrop;
 	}
 
-	public int getSecondItemDrop() {
+	public Item getSecondItemDrop() {
 		return secondItemDrop;
 	}
 
-	public void setSecondItemDrop(int secondItemDrop) {
+	public void setSecondItemDrop(Item secondItemDrop) {
 		this.secondItemDrop = secondItemDrop;
 	}
 
